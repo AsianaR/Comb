@@ -1,0 +1,20 @@
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    Console.WriteLine (C(11,4));
+  }
+
+  public static int C(int n, int k) {
+    if (k>n/2) k=n-k;
+    if (k==1)  return n;
+    if (k==0)  return 1;
+    int r=1;
+    for (int i=1; i<=k;++i) {
+        r*=n-k+i;
+        r/=i;  
+    }
+    return r;
+}
+}
+
